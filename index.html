@@ -624,9 +624,12 @@
     fetch(form.action, {
       method: 'POST',
       body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Accept': 'application/json' },
+      redirect: 'manual'
     }).then(function(response){
-      if (response.ok){
+      // status 0 + type 'opaqueredirect' significa que o Formspree respondeu com um redirecionamento
+      // (comportamento padrão dele em envio bem-sucedido) — tratamos como sucesso, sem tentar segui-lo.
+      if (response.ok || response.type === 'opaqueredirect'){
         form.reset();
         statusEl.style.display = 'block';
         statusEl.style.color = '#C9D6D0';
