@@ -138,6 +138,37 @@
     transition:background .15s ease;
   }
   .btn-primary:hover{background:var(--amber-deep);}
+  .btn-whatsapp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    letter-spacing:0.03em;
+    background:transparent;
+    color:var(--ink);
+    text-decoration:none;
+    padding:14px 24px;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    border:1px solid var(--ink);
+    transition:background .15s ease, color .15s ease;
+  }
+  .btn-whatsapp:hover{background:var(--ink); color:var(--paper);}
+  .btn-whatsapp svg{width:16px; height:16px; flex-shrink:0;}
+
+  .wa-float{
+    position:fixed;
+    right:22px; bottom:22px;
+    z-index:30;
+    width:56px; height:56px;
+    border-radius:50%;
+    background:#25D366;
+    display:flex; align-items:center; justify-content:center;
+    text-decoration:none;
+    box-shadow:0 4px 14px rgba(0,0,0,0.3);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .wa-float:hover{transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,0.35);}
+  .wa-float svg{width:32px; height:32px;}
   .hero-note{
     font-family:'IBM Plex Mono', monospace;
     font-size:12px;
@@ -413,6 +444,10 @@
       <p class="lede">Acompanhamento jurídico das etapas do processo administrativo junto ao órgão gestor do programa: leitura da notificação, apresentação de defesa, recurso e regularização cadastral.</p>
       <div class="hero-actions">
         <a href="#contato" class="btn-primary">Solicitar análise do caso</a>
+        <a href="https://wa.me/5545999208332?text=Ol%C3%A1%21%20Minha%20farm%C3%A1cia%20recebeu%20uma%20notifica%C3%A7%C3%A3o%20de%20suspens%C3%A3o%20do%20Farm%C3%A1cia%20Popular%20e%20gostaria%20de%20uma%20orienta%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-whatsapp">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14.7 3.5 13.4 3.5 12 3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20.5 12 20.5z"/></svg>
+          WhatsApp
+        </a>
         <span class="hero-note">Atendimento inicial sem compromisso</span>
       </div>
     </div>
@@ -680,7 +715,7 @@
       <div>
         <h4>Contato</h4>
         <p class="mono" style="color:var(--slate);">E-mail: a definir</p>
-        <p class="mono" style="color:var(--slate);">Telefone: a definir</p>
+        <p class="mono"><a href="https://wa.me/5545999208332" target="_blank" rel="noopener" style="color:var(--amber-deep);">WhatsApp: (45) 99920-8332</a></p>
       </div>
       <div>
         <h4>Endereço profissional</h4>
@@ -693,6 +728,10 @@
     </div>
   </div>
 </footer>
+
+<a href="https://wa.me/5545999208332?text=Ol%C3%A1%21%20Minha%20farm%C3%A1cia%20recebeu%20uma%20notifica%C3%A7%C3%A3o%20de%20suspens%C3%A3o%20do%20Farm%C3%A1cia%20Popular%20e%20gostaria%20de%20uma%20orienta%C3%A7%C3%A3o." target="_blank" rel="noopener" class="wa-float" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C8.83 3 3 8.83 3 16.001c0 2.386.638 4.68 1.851 6.696L3 29l6.463-1.822a12.94 12.94 0 0 0 6.538 1.763h.006c7.17 0 13-5.83 13-13.001C29.007 8.83 23.177 3 16.001 3zm0 23.775h-.005a10.77 10.77 0 0 1-5.487-1.504l-.394-.234-4.084 1.152 1.089-3.98-.257-.408a10.756 10.756 0 0 1-1.653-5.799c0-5.951 4.845-10.795 10.797-10.795 2.883 0 5.593 1.124 7.632 3.164a10.72 10.72 0 0 1 3.16 7.636c0 5.951-4.845 10.768-10.798 10.768zm5.917-8.077c-.324-.162-1.917-.946-2.214-1.054-.297-.108-.513-.162-.729.162-.216.324-.837 1.054-1.026 1.271-.189.216-.378.243-.702.081-.324-.162-1.368-.504-2.606-1.607-.964-.86-1.615-1.921-1.804-2.245-.189-.324-.02-.499.142-.66.146-.145.324-.378.486-.567.162-.189.216-.324.324-.54.108-.216.054-.405-.027-.567-.081-.162-.729-1.756-.999-2.406-.263-.632-.53-.546-.729-.556-.189-.009-.405-.011-.621-.011-.216 0-.567.081-.864.405-.297.324-1.134 1.108-1.134 2.702 0 1.594 1.161 3.134 1.323 3.35.162.216 2.286 3.491 5.539 4.896.774.334 1.377.534 1.848.684.777.247 1.484.212 2.043.129.623-.093 1.917-.784 2.187-1.541.27-.756.27-1.404.189-1.541-.081-.137-.297-.216-.621-.378z"/></svg>
+</a>
 
 </body>
 </html>
