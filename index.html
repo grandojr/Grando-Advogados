@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grando Advogados Associados | Farmácia Popular: fiscalização e defesa administrativa</title>
+<meta name="description" content="Assessoria jurídica para farmácias notificadas ou suspensas no Programa Farmácia Popular. Análise de notificação, defesa administrativa e recurso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EFEBE1;
+    --paper-alt: #E7E1D2;
+    --ink: #1E2A28;
+    --ink-soft: #3E4A46;
+    --slate: #56605A;
+    --amber: #A6742C;
+    --amber-deep: #8A5F22;
+    --oxblood: #7A2530;
+    --line: #C9C0AC;
+    --white: #FBFAF6;
+    --max: 1120px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--amber-deep);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:22px; height:1px;
+    background:var(--amber-deep);
+    display:inline-block;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    border-bottom:1px solid var(--line);
+    background:var(--paper);
+    position:sticky; top:0; z-index:20;
+  }
+  .header-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:18px 28px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+  }
+  .brand span{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    font-weight:400;
+    color:var(--slate);
+    letter-spacing:0.06em;
+    margin-top:2px;
+  }
+  .header-cta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    padding:9px 16px;
+    border:1px solid var(--ink);
+    text-decoration:none;
+    color:var(--ink);
+    transition:background .15s ease, color .15s ease;
+  }
+  .header-cta:hover{background:var(--ink); color:var(--paper);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 76px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .hero-inner{max-width:760px;}
+  .hero h1{
+    font-size:clamp(32px, 4.4vw, 50px);
+    line-height:1.12;
+    margin:18px 0 22px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--oxblood);
+  }
+  .hero p.lede{
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:580px;
+    margin-bottom:34px;
+  }
+  .hero-actions{display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
+  .btn-primary{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    letter-spacing:0.03em;
+    background:var(--ink);
+    color:var(--paper);
+    text-decoration:none;
+    padding:15px 26px;
+    display:inline-block;
+    transition:background .15s ease;
+  }
+  .btn-primary:hover{background:var(--amber-deep);}
+  .hero-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--slate);
+  }
+
+  .case-tag{
+    position:absolute;
+    right:28px; top:88px;
+    border:1px solid var(--line);
+    background:var(--white);
+    padding:14px 18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--slate);
+    max-width:220px;
+    display:none;
+  }
+  @media(min-width:960px){ .case-tag{display:block;} }
+  .case-tag b{color:var(--ink); display:block; font-size:12px; margin-bottom:6px;}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:68px 0; border-bottom:1px solid var(--line);}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head h2{font-size:clamp(26px,3vw,34px); margin-top:14px; line-height:1.2;}
+  .section-head p{color:var(--ink-soft); margin-top:14px; font-size:16.5px;}
+
+  /* ---------- O QUE ESTÁ ACONTECENDO ---------- */
+  .explain-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:56px;
+  }
+  @media(max-width:820px){ .explain-grid{grid-template-columns:1fr;} }
+  .explain-grid p{margin-bottom:16px; color:var(--ink-soft);}
+  .explain-grid p b{color:var(--ink); font-weight:600;}
+
+  .fact-box{
+    border:1px solid var(--line);
+    background:var(--white);
+    padding:26px;
+  }
+  .fact-box h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--oxblood);
+    margin-bottom:16px;
+    font-weight:500;
+  }
+  .fact-item{
+    display:flex; gap:12px;
+    padding:12px 0;
+    border-top:1px solid var(--line);
+    font-size:15px;
+  }
+  .fact-item:first-of-type{border-top:none;}
+  .fact-item .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--slate);
+    min-width:112px;
+  }
+
+  /* ---------- TIMELINE (signature element) ---------- */
+  .timeline-wrap{overflow-x:auto; padding-bottom:8px;}
+  .timeline{
+    display:flex;
+    min-width:760px;
+    position:relative;
+    padding-top:8px;
+  }
+  .timeline::before{
+    content:'';
+    position:absolute;
+    top:37px; left:0; right:0;
+    height:1px;
+    background-image:linear-gradient(to right, var(--line) 0 6px, transparent 6px 12px);
+    background-size:12px 1px;
+  }
+  .t-step{
+    flex:1;
+    padding-right:24px;
+    position:relative;
+  }
+  .t-stamp{
+    width:56px; height:56px;
+    border:1.5px solid var(--oxblood);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--oxblood);
+    background:var(--paper);
+    transform:rotate(-6deg);
+    position:relative;
+    z-index:2;
+    margin-bottom:20px;
+  }
+  .t-step:nth-child(even) .t-stamp{ transform:rotate(5deg); border-color:var(--amber-deep); color:var(--amber-deep);}
+  .t-step h4{
+    font-family:'Fraunces', serif;
+    font-size:16.5px;
+    font-weight:600;
+    margin-bottom:8px;
+    line-height:1.3;
+  }
+  .t-step p{
+    font-size:14px;
+    color:var(--slate);
+    max-width:200px;
+  }
+  .timeline-note{
+    margin-top:28px;
+    font-size:14px;
+    color:var(--slate);
+    border-left:2px solid var(--amber-deep);
+    padding-left:14px;
+    max-width:640px;
+  }
+
+  /* ---------- SERVIÇOS ---------- */
+  .service-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media(max-width:720px){ .service-grid{grid-template-columns:1fr;} }
+  .service-item{
+    background:var(--paper);
+    padding:32px;
+  }
+  .service-item .n{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--amber-deep);
+    margin-bottom:14px;
+    display:block;
+  }
+  .service-item h3{font-size:19px; margin-bottom:10px; font-weight:600;}
+  .service-item p{color:var(--ink-soft); font-size:15px;}
+
+  /* ---------- ATUAÇÃO ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:44px;
+    align-items:start;
+  }
+  @media(max-width:720px){ .about-grid{grid-template-columns:1fr;} }
+  .about-card{
+    border:1px solid var(--line);
+    background:var(--white);
+    padding:20px;
+  }
+  .about-card .mono{font-size:11px; color:var(--slate); display:block; margin-bottom:4px;}
+  .about-card .oab{font-size:16px; color:var(--ink); font-weight:500;}
+  .about-grid p{color:var(--ink-soft); margin-bottom:14px;}
+
+  /* ---------- FORM ---------- */
+  .form-section{background:var(--ink); color:var(--paper); border-bottom:none;}
+  .form-section .eyebrow{color:var(--amber);}
+  .form-section .eyebrow::before{background:var(--amber);}
+  .form-section .section-head h2{color:var(--paper);}
+  .form-section .section-head p{color:#B9C0BC;}
+
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 24px;
+    max-width:760px;
+  }
+  @media(max-width:640px){ .form-grid{grid-template-columns:1fr;} }
+  .field{display:flex; flex-direction:column; gap:8px;}
+  .field.full{grid-column:1 / -1;}
+  .field label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:#B9C0BC;
+  }
+  .field input, .field textarea{
+    background:transparent;
+    border:none;
+    border-bottom:1px solid #4A5652;
+    color:var(--paper);
+    font-family:'Source Serif 4', serif;
+    font-size:16px;
+    padding:8px 2px;
+    outline:none;
+  }
+  .field input:focus, .field textarea:focus{border-bottom-color:var(--amber);}
+  .field input::placeholder, .field textarea::placeholder{color:#5C6864;}
+  .field textarea{resize:vertical; min-height:70px;}
+
+  .consent{
+    display:flex; gap:10px; align-items:flex-start;
+    font-size:13px; color:#9CA5A1;
+    margin-top:6px;
+  }
+  .consent input{margin-top:3px;}
+
+  .form-submit{
+    margin-top:32px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    background:var(--amber);
+    color:var(--ink);
+    border:none;
+    padding:15px 30px;
+    cursor:pointer;
+    transition:background .15s ease;
+  }
+  .form-submit:hover{background:#C48F3E;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:44px 0 36px;}
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:32px;
+    font-size:13.5px;
+    color:var(--slate);
+  }
+  @media(max-width:720px){ .footer-grid{grid-template-columns:1fr;} }
+  .footer-grid h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .footer-grid p, .footer-grid a{margin-bottom:6px; display:block; text-decoration:none;}
+  .footer-legal{
+    margin-top:36px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:12px;
+    color:var(--slate);
+    line-height:1.7;
+  }
+
+  :focus-visible{ outline:2px solid var(--amber-deep); outline-offset:2px; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      Grando Advogados Associados
+      <span>OAB/PR 99.958 &nbsp;·&nbsp; OAB/PR 49.558</span>
+    </div>
+    <a href="#contato" class="header-cta">Solicitar análise</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap" style="position:relative;">
+    <div class="hero-inner">
+      <p class="eyebrow">Programa Farmácia Popular</p>
+      <h1>Farmácia notificada ou suspensa para fiscalização? Há um <em>prazo</em> — e há direito de defesa.</h1>
+      <p class="lede">Acompanhamento jurídico das etapas do processo administrativo junto ao órgão gestor do programa: leitura da notificação, apresentação de defesa, recurso e regularização cadastral.</p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">Solicitar análise do caso</a>
+        <span class="hero-note">Atendimento inicial sem compromisso</span>
+      </div>
+    </div>
+    <div class="case-tag">
+      <b>Antes de agir</b>
+      Verifique o prazo indicado na própria notificação recebida — ele é o dado mais importante do seu caso.
+    </div>
+  </div>
+</section>
+
+<section id="entenda">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Entenda a situação</p>
+      <h2>O que significa a suspensão do credenciamento</h2>
+      <p>A suspensão para fiscalização é uma medida administrativa — geralmente reversível — que interrompe temporariamente a participação da farmácia no programa até a conclusão da apuração.</p>
+    </div>
+    <div class="explain-grid">
+      <div>
+        <p><b>Suspensão cautelar</b> não é o mesmo que descredenciamento definitivo. Trata-se, em regra, de medida preventiva enquanto o órgão gestor apura inconsistências identificadas — cadastrais, na dispensação de medicamentos ou no cumprimento das normas do programa.</p>
+        <p>A farmácia notificada tem o direito de apresentar defesa dentro do prazo estabelecido no próprio ato de notificação. O não exercício desse direito no prazo correto costuma ser o principal fator que transforma uma suspensão temporária em descredenciamento.</p>
+        <p>Cada processo tem particularidades próprias — o motivo da fiscalização, o histórico cadastral da farmácia e o teor exato da notificação mudam a estratégia de defesa cabível.</p>
+      </div>
+      <div class="fact-box">
+        <h3>Motivos frequentes de fiscalização</h3>
+        <div class="fact-item"><span class="k mono">Cadastral</span> Divergências entre dados cadastrados e informações apuradas pelo órgão gestor.</div>
+        <div class="fact-item"><span class="k mono">Dispensação</span> Indícios de irregularidade na dispensação ou no faturamento de medicamentos do programa.</div>
+        <div class="fact-item"><span class="k mono">Normativa</span> Descumprimento de exigências operacionais previstas nas normas do programa.</div>
+        <div class="fact-item"><span class="k mono">Documental</span> Pendências ou inconsistências em documentação exigida para o credenciamento.</div>
+        <div class="fact-item"><span class="k mono">Prazo de defesa</span> 15 dias a partir da notificação para apresentar documentos e esclarecimentos (art. 38, §1º, Anexo LXXVII).</div>
+        <div class="fact-item"><span class="k mono">Multa e bloqueio</span> Até 10% sobre as vendas dos últimos 3 meses e/ou bloqueio DATASUS de 3 a 6 meses (art. 42).</div>
+        <div class="fact-item"><span class="k mono">Teto legal</span> Após descredenciamento por irregularidades, nova adesão só após 2 anos (art. 43).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="etapas">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Como o processo caminha</p>
+      <h2>Etapas do processo administrativo</h2>
+      <p>Um panorama geral das fases mais comuns. Os prazos exatos variam conforme o ato de notificação e devem ser conferidos no documento recebido pela farmácia.</p>
+    </div>
+    <div class="timeline-wrap">
+      <div class="timeline">
+        <div class="t-step">
+          <div class="t-stamp mono">01</div>
+          <h4>Notificação recebida</h4>
+          <p>A farmácia é comunicada da suspensão e do motivo da fiscalização.</p>
+        </div>
+        <div class="t-step">
+          <div class="t-stamp mono">02</div>
+          <h4>Apresentação de defesa</h4>
+          <p>Prazo de 15 dias a partir da notificação para apresentar documentos e esclarecimentos (art. 38, §1º, Anexo LXXVII).</p>
+        </div>
+        <div class="t-step">
+          <div class="t-stamp mono">03</div>
+          <h4>Apuração pelo DENASUS</h4>
+          <p>Se os indícios não forem sanados, o DAF/SCTIE/MS solicita ao DENASUS a instauração de procedimento de apuração (art. 38, §2º).</p>
+        </div>
+        <div class="t-step">
+          <div class="t-stamp mono">04</div>
+          <h4>Recurso administrativo</h4>
+          <p>Se necessário, cabe recurso contra a decisão em instância superior.</p>
+        </div>
+        <div class="t-step">
+          <div class="t-stamp mono">05</div>
+          <h4>Decisão e regularização</h4>
+          <p>Com base no relatório do DENASUS, o DAF/SCTIE/MS decide sobre o descredenciamento (art. 39) ou a reativação do credenciamento.</p>
+        </div>
+      </div>
+    </div>
+    <p class="timeline-note">O prazo de 15 dias para apresentar documentos e esclarecimentos é contado a partir da notificação (art. 38, §1º, Anexo LXXVII). Em casos excepcionais, a norma permite que a apuração seja instaurada antes de oportunizar esse prazo de defesa (art. 38, §3º) — quando essa postergação do contraditório se estende de forma indefinida, tribunais já reconheceram violação ao devido processo legal, o que pode ser questionado judicialmente.</p>
+  </div>
+</section>
+
+<section id="atuacao-servicos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Como atuamos</p>
+      <h2>Acompanhamento em cada etapa do processo</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-item">
+        <span class="n mono">— análise</span>
+        <h3>Leitura da notificação</h3>
+        <p>Exame do auto de notificação ou infração para identificar o motivo exato da suspensão, o prazo aplicável e a estratégia de resposta cabível.</p>
+      </div>
+      <div class="service-item">
+        <span class="n mono">— defesa</span>
+        <h3>Defesa administrativa</h3>
+        <p>Elaboração e protocolo da defesa junto ao órgão gestor, com a documentação necessária para sustentar a regularidade da farmácia.</p>
+      </div>
+      <div class="service-item">
+        <span class="n mono">— acompanhamento</span>
+        <h3>Andamento processual</h3>
+        <p>Acompanhamento das movimentações do processo administrativo até a decisão, com orientação sobre prazos e exigências intermediárias.</p>
+      </div>
+      <div class="service-item">
+        <span class="n mono">— recurso</span>
+        <h3>Recurso e regularização</h3>
+        <p>Interposição de recurso, quando cabível, e orientação sobre os passos para regularização cadastral após a decisão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="about-card">
+          <span class="mono">Sociedade de advocacia</span>
+          <span class="oab">Grando Advogados Associados</span>
+          <span class="mono" style="margin-top:10px;">CNPJ 62.063.388/0001-27</span>
+        </div>
+        <div class="about-card" style="margin-top:16px;">
+          <span class="mono">Responsável técnico</span>
+          <span class="oab">Ademir Grando Junior</span>
+          <span class="mono" style="margin-top:10px;">OAB/PR 99.958</span>
+        </div>
+        <div class="about-card" style="margin-top:16px;">
+          <span class="mono">Responsável técnico</span>
+          <span class="oab">Cleyderson Grando</span>
+          <span class="mono" style="margin-top:10px;">OAB/PR 49.558</span>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:14px;">Atuação</p>
+        <p>Atuação voltada ao direito administrativo e regulatório aplicado ao setor farmacêutico, com foco em processos de fiscalização, defesa administrativa e regularização de credenciamento em programas públicos de saúde.</p>
+        <p>Cada farmácia notificada recebe uma análise individual do processo — o histórico cadastral, o teor da notificação e o estágio em que o caso se encontra determinam a estratégia mais adequada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="contato">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Solicitar análise</p>
+      <h2>Conte o essencial sobre a notificação recebida</h2>
+      <p>Os campos abaixo são suficientes para uma primeira avaliação. Detalhes adicionais podem ser tratados no contato direto.</p>
+    </div>
+    <form class="form-grid" id="contact-form" action="https://formspree.io/f/mykrbdeb" method="POST">
+      <!-- honeypot anti-spam: campo invisível para humanos, bots costumam preencher -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="Novo contato — site Grando Advogados">
+
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required>
+      </div>
+      <div class="field">
+        <label for="farmacia">Farmácia / Razão social</label>
+        <input id="farmacia" name="farmacia" type="text" placeholder="Nome da farmácia" required>
+      </div>
+      <div class="field">
+        <label for="cnpj">CNPJ</label>
+        <input id="cnpj" name="cnpj" type="text" placeholder="00.000.000/0000-00" required>
+      </div>
+      <div class="field">
+        <label for="telefone">Telefone / WhatsApp</label>
+        <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" required>
+      </div>
+      <div class="field full">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+      </div>
+      <div class="field full">
+        <label for="descricao">Descrição breve do caso (opcional)</label>
+        <textarea id="descricao" name="descricao" placeholder="Ex.: data da notificação, motivo indicado, prazo informado..."></textarea>
+        <span style="font-size:12px; color:#8A9490;">Evite anexar ou colar aqui documentos com dados sensíveis do paciente/beneficiário. Esses detalhes podem ser tratados diretamente por telefone ou e-mail após o primeiro contato.</span>
+      </div>
+      <div class="field full">
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent" style="text-transform:none; letter-spacing:normal; font-family:'Source Serif 4', serif;">Autorizo o uso dos dados informados exclusivamente para avaliação do meu caso e retorno de contato, conforme a Lei Geral de Proteção de Dados (LGPD).</label>
+        </div>
+      </div>
+      <div class="field full">
+        <button type="submit" class="form-submit" id="submit-btn">Enviar solicitação</button>
+        <p id="form-status" style="margin-top:14px; font-size:14px; display:none;"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+(function(){
+  var form = document.getElementById('contact-form');
+  var statusEl = document.getElementById('form-status');
+  var btn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    if (form.action.indexOf('SEU_FORM_ID') !== -1){
+      statusEl.style.display = 'block';
+      statusEl.style.color = '#E0A96D';
+      statusEl.textContent = 'Formulário ainda não configurado: substitua SEU_FORM_ID pelo endpoint real do Formspree (ou outro serviço) antes de publicar.';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    statusEl.style.display = 'none';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form)
+    }).then(function(response){
+      if (response.ok){
+        form.reset();
+        statusEl.style.display = 'block';
+        statusEl.style.color = '#C9D6D0';
+        statusEl.textContent = 'Solicitação enviada. Entraremos em contato em breve.';
+      } else {
+        return response.json().then(function(data){
+          var msg;
+          if (data && data.errors && data.errors.length){
+            msg = data.errors.map(function(er){ return er.message; }).join('; ');
+          } else if (data && data.error){
+            msg = data.error;
+          } else {
+            msg = 'Erro ao enviar (código ' + response.status + ').';
+          }
+          throw new Error(msg);
+        }).catch(function(parseErr){
+          if (parseErr instanceof Error && parseErr.message && parseErr.message.indexOf('código') === -1){
+            throw parseErr;
+          }
+          throw new Error('Erro ao enviar (código ' + response.status + ').');
+        });
+      }
+    }).catch(function(err){
+      statusEl.style.display = 'block';
+      statusEl.style.color = '#D98C8C';
+      statusEl.textContent = 'Não foi possível enviar agora: ' + (err && err.message ? err.message : 'verifique sua conexão') + '. Se você abriu este arquivo diretamente (file://) em vez de um site hospedado, isso pode ser a causa — teste novamente após publicar o site em um domínio real.';
+    }).finally(function(){
+      btn.disabled = false;
+      btn.textContent = 'Enviar solicitação';
+    });
+  });
+})();
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Sociedade de advocacia</h4>
+        <p>Grando Advogados Associados</p>
+        <p class="mono">CNPJ 62.063.388/0001-27</p>
+        <p style="margin-top:10px;">Ademir Grando Junior — OAB/PR 99.958</p>
+        <p>Cleyderson Grando — OAB/PR 49.558</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p class="mono" style="color:var(--slate);">E-mail: a definir</p>
+        <p class="mono" style="color:var(--slate);">Telefone: a definir</p>
+      </div>
+      <div>
+        <h4>Endereço profissional</h4>
+        <p>Av. Santa Catarina, nº 14, Centro</p>
+        <p>Corbélia/PR</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      Este site tem caráter exclusivamente informativo e não constitui aconselhamento jurídico individual. A análise de cada caso depende do exame da documentação específica. Publicidade em conformidade com o Provimento nº 205/2021 do Conselho Federal da OAB. © Grando Advogados Associados. Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
