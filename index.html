@@ -630,28 +630,31 @@
         statusEl.style.display = 'block';
         statusEl.style.color = '#C9D6D0';
         statusEl.textContent = 'Solicitação enviada. Entraremos em contato em breve.';
-      } else {
-        return response.json().then(function(data){
-          var msg;
-          if (data && data.errors && data.errors.length){
-            msg = data.errors.map(function(er){ return er.message; }).join('; ');
-          } else if (data && data.error){
-            msg = data.error;
-          } else {
-            msg = 'Erro ao enviar (código ' + response.status + ').';
-          }
-          throw new Error(msg);
-        }).catch(function(parseErr){
-          if (parseErr instanceof Error && parseErr.message && parseErr.message.indexOf('código') === -1){
-            throw parseErr;
-          }
-          throw new Error('Erro ao enviar (código ' + response.status + ').');
-        });
+        return;
       }
-    }).catch(function(err){
+
+      var fallbackMsg = 'Erro ao enviar (código ' + response.status + '). Se acabou de configurar o formulário, verifique se já confirmou o e-mail que o Formspree enviou.';
+
+      return response.json().then(function(data){
+        var msg = fallbackMsg;
+        if (data && data.errors && data.errors.length){
+          msg = data.errors.map(function(er){ return er.message; }).join('; ');
+        } else if (data && data.error){
+          msg = data.error;
+        }
+        statusEl.style.display = 'block';
+        statusEl.style.color = '#D98C8C';
+        statusEl.textContent = 'Não foi possível enviar: ' + msg;
+      }, function(){
+        // resposta não veio em JSON (ex.: página HTML de erro) — usa mensagem genérica, sem vazar erro técnico do navegador
+        statusEl.style.display = 'block';
+        statusEl.style.color = '#D98C8C';
+        statusEl.textContent = 'Não foi possível enviar: ' + fallbackMsg;
+      });
+    }).catch(function(){
       statusEl.style.display = 'block';
       statusEl.style.color = '#D98C8C';
-      statusEl.textContent = 'Não foi possível enviar agora: ' + (err && err.message ? err.message : 'verifique sua conexão') + '. Se você abriu este arquivo diretamente (file://) em vez de um site hospedado, isso pode ser a causa — teste novamente após publicar o site em um domínio real.';
+      statusEl.textContent = 'Não foi possível enviar agora. Verifique sua conexão e tente novamente, ou entre em contato diretamente.';
     }).finally(function(){
       btn.disabled = false;
       btn.textContent = 'Enviar solicitação';
