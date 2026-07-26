@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grando Advogados Associados | Farmácia Popular: fiscalização e defesa administrativa</title>
 <meta name="description" content="Assessoria jurídica para farmácias notificadas ou suspensas no Programa Farmácia Popular. Análise de notificação, defesa administrativa e recurso.">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grando Advogados Associados">
+<meta property="og:title" content="Grando Advogados Associados | Farmácia Popular: fiscalização e defesa administrativa">
+<meta property="og:description" content="Assessoria jurídica para farmácias notificadas ou suspensas no Programa Farmácia Popular. Análise de notificação, defesa administrativa e recurso.">
+<meta property="og:image" content="https://grandojr.github.io/Grando-Advogados/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://grandojr.github.io/Grando-Advogados/">
+<meta property="og:locale" content="pt_BR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grando Advogados Associados | Farmácia Popular: fiscalização e defesa administrativa">
+<meta name="twitter:description" content="Assessoria jurídica para farmácias notificadas ou suspensas no Programa Farmácia Popular.">
+<meta name="twitter:image" content="https://grandojr.github.io/Grando-Advogados/og-image.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -275,7 +290,7 @@
     margin-bottom:20px;
   }
   .t-step:nth-child(even) .t-stamp{ transform:rotate(5deg); border-color:var(--amber-deep); color:var(--amber-deep);}
-  .t-step h4{
+  .t-step h3{
     font-family:'Open Sans', sans-serif;
     font-size:16.5px;
     font-weight:600;
@@ -319,6 +334,68 @@
   .service-item h3{font-size:19px; margin-bottom:10px; font-weight:600;}
   .service-item p{color:var(--ink-soft); font-size:15px;}
 
+  /* ---------- GUIA GRATUITO ---------- */
+  .guide-section{background:var(--paper-alt);}
+  .guide-box{
+    display:flex;
+    gap:32px;
+    align-items:center;
+    border:1px solid var(--line);
+    background:var(--white);
+    padding:32px;
+  }
+  @media(max-width:720px){ .guide-box{flex-direction:column; align-items:flex-start;} }
+  .guide-icon{
+    width:56px; height:56px;
+    flex-shrink:0;
+    border:1.5px solid var(--amber-deep);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .guide-icon svg{width:26px; height:26px;}
+  .guide-text h3{font-size:19px; margin-bottom:8px; font-weight:600;}
+  .guide-text p{color:var(--ink-soft); font-size:15px; margin-bottom:0;}
+  .guide-actions{display:flex; flex-direction:column; gap:10px; flex-shrink:0; margin-left:auto;}
+  @media(max-width:720px){ .guide-actions{margin-left:0; width:100%;} }
+  .btn-download{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    background:var(--ink);
+    color:var(--paper);
+    text-decoration:none;
+    padding:13px 22px;
+    text-align:center;
+    white-space:nowrap;
+  }
+  .btn-download:hover{background:var(--amber-deep);}
+
+  .updates-optin{
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+  .updates-optin p{font-size:13px; color:var(--slate); margin-bottom:10px;}
+  .updates-form{display:flex; gap:8px; flex-wrap:wrap;}
+  .updates-form input[type="email"]{
+    flex:1; min-width:180px;
+    border:1px solid var(--line);
+    background:var(--paper);
+    padding:10px 12px;
+    font-family:'Open Sans', sans-serif;
+    font-size:14px;
+    color:var(--ink);
+  }
+  .updates-form button{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    border:1px solid var(--ink);
+    background:transparent;
+    color:var(--ink);
+    padding:10px 16px;
+    cursor:pointer;
+  }
+  .updates-form button:hover{background:var(--ink); color:var(--paper);}
+  .updates-status{font-size:12.5px; margin-top:8px; display:none;}
+
   /* ---------- ATUAÇÃO ---------- */
   .about-grid{
     display:grid;
@@ -336,10 +413,45 @@
   .about-card .oab{font-size:16px; color:var(--ink); font-weight:500;}
   .about-grid p{color:var(--ink-soft); margin-bottom:14px;}
 
+  .profile-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-bottom:20px;
+  }
+  @media(max-width:480px){ .profile-grid{grid-template-columns:1fr;} }
+  .profile-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:20px;
+    text-align:center;
+  }
+  .profile-photo{
+    width:104px; height:104px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:0 auto 14px;
+    display:block;
+    border:2px solid var(--line);
+  }
+  .profile-placeholder{
+    width:104px; height:104px;
+    border-radius:50%;
+    margin:0 auto 14px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--ink);
+    color:var(--amber);
+    font-family:'JetBrains Mono', monospace;
+    font-weight:500;
+    font-size:26px;
+  }
+  .profile-card .name{font-weight:600; font-size:16px; margin-bottom:4px; color:var(--ink);}
+  .profile-card .mono{font-size:12px; color:var(--slate); display:block;}
+
   /* ---------- FORM ---------- */
   .form-section{background:var(--ink); color:var(--paper); border-bottom:none;}
-  .form-section .eyebrow{color:var(--amber);}
-  .form-section .eyebrow::before{background:var(--amber);}
+  .form-section .eyebrow{color:#BE8C44;}
+  .form-section .eyebrow::before{background:#BE8C44;}
   .form-section .section-head h2{color:var(--paper);}
   .form-section .section-head p{color:#B9C0BC;}
 
@@ -403,7 +515,7 @@
     color:var(--slate);
   }
   @media(max-width:720px){ .footer-grid{grid-template-columns:1fr;} }
-  .footer-grid h4{
+  .footer-grid h3{
     font-family:'JetBrains Mono', monospace;
     font-size:11px;
     text-transform:uppercase;
@@ -428,6 +540,7 @@
     *{transition:none !important;}
   }
 </style>
+<script data-goatcounter="https://grando.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -450,7 +563,7 @@
       <div class="hero-actions">
         <a href="#contato" class="btn-primary">Solicitar análise do caso</a>
         <a href="https://wa.me/5545999208332?text=Ol%C3%A1%21%20Minha%20farm%C3%A1cia%20recebeu%20uma%20notifica%C3%A7%C3%A3o%20de%20suspens%C3%A3o%20do%20Farm%C3%A1cia%20Popular%20e%20gostaria%20de%20uma%20orienta%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-whatsapp">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14.7 3.5 13.4 3.5 12 3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20.5 12 20.5z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14.7 3.5 13.4 3.5 12 3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20.5 12 20.5z"/></svg>
           WhatsApp
         </a>
         <span class="hero-note">Atendimento inicial sem compromisso</span>
@@ -497,31 +610,31 @@
       <h2>Etapas do processo administrativo</h2>
       <p>Um panorama geral das fases mais comuns. Os prazos exatos variam conforme o ato de notificação e devem ser conferidos no documento recebido pela farmácia.</p>
     </div>
-    <div class="timeline-wrap">
+    <div class="timeline-wrap" tabindex="0" role="region" aria-label="Linha do tempo do processo administrativo, role para o lado para ver todas as etapas">
       <div class="timeline">
         <div class="t-step">
           <div class="t-stamp mono">01</div>
-          <h4>Notificação recebida</h4>
+          <h3>Notificação recebida</h3>
           <p>A farmácia é comunicada da suspensão e do motivo da fiscalização.</p>
         </div>
         <div class="t-step">
           <div class="t-stamp mono">02</div>
-          <h4>Apresentação de defesa</h4>
+          <h3>Apresentação de defesa</h3>
           <p>Prazo de 15 dias a partir da notificação para apresentar documentos e esclarecimentos (art. 38, §1º, Anexo LXXVII).</p>
         </div>
         <div class="t-step">
           <div class="t-stamp mono">03</div>
-          <h4>Apuração pelo DENASUS</h4>
+          <h3>Apuração pelo DENASUS</h3>
           <p>Se os indícios não forem sanados, o DAF/SCTIE/MS solicita ao DENASUS a instauração de procedimento de apuração (art. 38, §2º).</p>
         </div>
         <div class="t-step">
           <div class="t-stamp mono">04</div>
-          <h4>Recurso administrativo</h4>
+          <h3>Recurso administrativo</h3>
           <p>Se necessário, cabe recurso contra a decisão em instância superior.</p>
         </div>
         <div class="t-step">
           <div class="t-stamp mono">05</div>
-          <h4>Decisão e regularização</h4>
+          <h3>Decisão e regularização</h3>
           <p>Com base no relatório do DENASUS, o DAF/SCTIE/MS decide sobre o descredenciamento (art. 39) ou a reativação do credenciamento.</p>
         </div>
       </div>
@@ -529,6 +642,65 @@
     <p class="timeline-note">O prazo de 15 dias para apresentar documentos e esclarecimentos é contado a partir da notificação (art. 38, §1º, Anexo LXXVII). Em casos excepcionais, a norma permite que a apuração seja instaurada antes de oportunizar esse prazo de defesa (art. 38, §3º) — quando essa postergação do contraditório se estende de forma indefinida, tribunais já reconheceram violação ao devido processo legal, o que pode ser questionado judicialmente.</p>
   </div>
 </section>
+
+<section class="guide-section">
+  <div class="wrap">
+    <div class="guide-box">
+      <div class="guide-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#8A5F22" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6M9 9h2"/></svg>
+      </div>
+      <div class="guide-text">
+        <h3>Guia gratuito: o que fazer nas primeiras horas</h3>
+        <p>Um checklist prático de 7 passos para quem acabou de receber uma notificação — sem cadastro necessário para baixar.</p>
+        <div class="updates-optin">
+          <p>Quer ser avisado se houver mudança relevante na norma do programa? Deixe seu e-mail (opcional):</p>
+          <form class="updates-form" id="updates-form" action="https://formspree.io/f/mykrbdeb" method="POST">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="Novo inscrito — avisos sobre Farmácia Popular">
+            <input type="hidden" name="tipo" value="Cadastro para avisos (não é caso urgente)">
+            <input type="email" name="email" placeholder="seu@email.com" required aria-label="Seu e-mail">
+            <button type="submit">Quero ser avisado</button>
+          </form>
+          <p class="updates-status" id="updates-status"></p>
+        </div>
+      </div>
+      <div class="guide-actions">
+        <a href="guia-farmacia-popular.pdf" class="btn-download" download>↓ Baixar guia (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var uform = document.getElementById('updates-form');
+  var ustatus = document.getElementById('updates-status');
+  if (!uform) return;
+  uform.addEventListener('submit', function(e){
+    e.preventDefault();
+    fetch(uform.action, {
+      method: 'POST',
+      body: new FormData(uform),
+      headers: { 'Accept': 'application/json' },
+      redirect: 'manual'
+    }).then(function(response){
+      ustatus.style.display = 'block';
+      if (response.ok || response.type === 'opaqueredirect'){
+        uform.reset();
+        ustatus.style.color = '#4A6B52';
+        ustatus.textContent = 'Cadastrado! Avisaremos por e-mail se houver novidade relevante.';
+      } else {
+        ustatus.style.color = '#B03A3A';
+        ustatus.textContent = 'Não foi possível cadastrar agora. Tente novamente.';
+      }
+    }).catch(function(){
+      ustatus.style.display = 'block';
+      ustatus.style.color = '#B03A3A';
+      ustatus.textContent = 'Não foi possível cadastrar agora. Tente novamente.';
+    });
+  });
+})();
+</script>
 
 <section id="atuacao-servicos">
   <div class="wrap">
@@ -565,20 +737,22 @@
   <div class="wrap">
     <div class="about-grid">
       <div>
+        <div class="profile-grid">
+          <div class="profile-card">
+            <img src="ademir-headshot.jpg" alt="Ademir Grando Junior" class="profile-photo">
+            <p class="name">Ademir Grando Junior</p>
+            <span class="mono">OAB/PR 99.958</span>
+          </div>
+          <div class="profile-card">
+            <div class="profile-placeholder">CG</div>
+            <p class="name">Cleyderson Grando</p>
+            <span class="mono">OAB/PR 49.558</span>
+          </div>
+        </div>
         <div class="about-card">
           <span class="mono">Sociedade de advocacia</span>
           <span class="oab">Grando Advogados Associados</span>
           <span class="mono" style="margin-top:10px;">CNPJ 62.063.388/0001-27</span>
-        </div>
-        <div class="about-card" style="margin-top:16px;">
-          <span class="mono">Responsável técnico</span>
-          <span class="oab">Ademir Grando Junior</span>
-          <span class="mono" style="margin-top:10px;">OAB/PR 99.958</span>
-        </div>
-        <div class="about-card" style="margin-top:16px;">
-          <span class="mono">Responsável técnico</span>
-          <span class="oab">Cleyderson Grando</span>
-          <span class="mono" style="margin-top:10px;">OAB/PR 49.558</span>
         </div>
       </div>
       <div>
@@ -711,19 +885,19 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <h4>Sociedade de advocacia</h4>
+        <h3>Sociedade de advocacia</h3>
         <p>Grando Advogados Associados</p>
         <p class="mono">CNPJ 62.063.388/0001-27</p>
         <p style="margin-top:10px;">Ademir Grando Junior — OAB/PR 99.958</p>
         <p>Cleyderson Grando — OAB/PR 49.558</p>
       </div>
       <div>
-        <h4>Contato</h4>
-        <p class="mono" style="color:var(--slate);">E-mail: a definir</p>
+        <h3>Contato</h3>
+        <p class="mono"><a href="mailto:grandojr@outlook.com" style="color:var(--amber-deep);">grandojr@outlook.com</a></p>
         <p class="mono"><a href="https://wa.me/5545999208332" target="_blank" rel="noopener" style="color:var(--amber-deep);">WhatsApp: (45) 99920-8332</a></p>
       </div>
       <div>
-        <h4>Endereço profissional</h4>
+        <h3>Endereço profissional</h3>
         <p>Av. Santa Catarina, nº 14, Centro</p>
         <p>Corbélia/PR</p>
       </div>
@@ -735,7 +909,7 @@
 </footer>
 
 <a href="https://wa.me/5545999208332?text=Ol%C3%A1%21%20Minha%20farm%C3%A1cia%20recebeu%20uma%20notifica%C3%A7%C3%A3o%20de%20suspens%C3%A3o%20do%20Farm%C3%A1cia%20Popular%20e%20gostaria%20de%20uma%20orienta%C3%A7%C3%A3o." target="_blank" rel="noopener" class="wa-float" aria-label="Conversar no WhatsApp">
-  <svg viewBox="0 0 32 32" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C8.83 3 3 8.83 3 16.001c0 2.386.638 4.68 1.851 6.696L3 29l6.463-1.822a12.94 12.94 0 0 0 6.538 1.763h.006c7.17 0 13-5.83 13-13.001C29.007 8.83 23.177 3 16.001 3zm0 23.775h-.005a10.77 10.77 0 0 1-5.487-1.504l-.394-.234-4.084 1.152 1.089-3.98-.257-.408a10.756 10.756 0 0 1-1.653-5.799c0-5.951 4.845-10.795 10.797-10.795 2.883 0 5.593 1.124 7.632 3.164a10.72 10.72 0 0 1 3.16 7.636c0 5.951-4.845 10.768-10.798 10.768zm5.917-8.077c-.324-.162-1.917-.946-2.214-1.054-.297-.108-.513-.162-.729.162-.216.324-.837 1.054-1.026 1.271-.189.216-.378.243-.702.081-.324-.162-1.368-.504-2.606-1.607-.964-.86-1.615-1.921-1.804-2.245-.189-.324-.02-.499.142-.66.146-.145.324-.378.486-.567.162-.189.216-.324.324-.54.108-.216.054-.405-.027-.567-.081-.162-.729-1.756-.999-2.406-.263-.632-.53-.546-.729-.556-.189-.009-.405-.011-.621-.011-.216 0-.567.081-.864.405-.297.324-1.134 1.108-1.134 2.702 0 1.594 1.161 3.134 1.323 3.35.162.216 2.286 3.491 5.539 4.896.774.334 1.377.534 1.848.684.777.247 1.484.212 2.043.129.623-.093 1.917-.784 2.187-1.541.27-.756.27-1.404.189-1.541-.081-.137-.297-.216-.621-.378z"/></svg>
+  <svg aria-hidden="true" viewBox="0 0 32 32" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"><path d="M16.001 3C8.83 3 3 8.83 3 16.001c0 2.386.638 4.68 1.851 6.696L3 29l6.463-1.822a12.94 12.94 0 0 0 6.538 1.763h.006c7.17 0 13-5.83 13-13.001C29.007 8.83 23.177 3 16.001 3zm0 23.775h-.005a10.77 10.77 0 0 1-5.487-1.504l-.394-.234-4.084 1.152 1.089-3.98-.257-.408a10.756 10.756 0 0 1-1.653-5.799c0-5.951 4.845-10.795 10.797-10.795 2.883 0 5.593 1.124 7.632 3.164a10.72 10.72 0 0 1 3.16 7.636c0 5.951-4.845 10.768-10.798 10.768zm5.917-8.077c-.324-.162-1.917-.946-2.214-1.054-.297-.108-.513-.162-.729.162-.216.324-.837 1.054-1.026 1.271-.189.216-.378.243-.702.081-.324-.162-1.368-.504-2.606-1.607-.964-.86-1.615-1.921-1.804-2.245-.189-.324-.02-.499.142-.66.146-.145.324-.378.486-.567.162-.189.216-.324.324-.54.108-.216.054-.405-.027-.567-.081-.162-.729-1.756-.999-2.406-.263-.632-.53-.546-.729-.556-.189-.009-.405-.011-.621-.011-.216 0-.567.081-.864.405-.297.324-1.134 1.108-1.134 2.702 0 1.594 1.161 3.134 1.323 3.35.162.216 2.286 3.491 5.539 4.896.774.334 1.377.534 1.848.684.777.247 1.484.212 2.043.129.623-.093 1.917-.784 2.187-1.541.27-.756.27-1.404.189-1.541-.081-.137-.297-.216-.621-.378z"/></svg>
 </a>
 
 </body>
